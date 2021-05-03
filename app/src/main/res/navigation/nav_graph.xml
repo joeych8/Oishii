@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.oishii.login.LoginFragment"
+        android:label="login_fragment"
+        tools:layout="@layout/login_fragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_eatInOrTakeAwayFragment"
+            app:destination="@id/eatInOrTakeAwayFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/eatInOrTakeAwayFragment"
+        android:name="com.example.oishii.order.EatInOrTakeAwayFragment"
+        android:label="eat_in_or_take_away_fragment"
+        tools:layout="@layout/eat_in_or_take_away_fragment" />
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.example.oishii.order.MenuFragment"
+        android:label="menu_fragment"
+        tools:layout="@layout/menu_fragment" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.oishii.profile.ProfileFragment"
+        android:label="profile_fragment"
+        tools:layout="@layout/profile_fragment" />
+</navigation>

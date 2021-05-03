@@ -37,3 +37,4 @@ local.properties
 ehthumbs.db
 Thumbs.db
 Dice-Roller/
+.idea/gradle.xml

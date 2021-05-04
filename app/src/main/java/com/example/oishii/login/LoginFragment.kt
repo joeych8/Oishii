@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.navOptions
 import com.example.oishii.R
 
 class LoginFragment : Fragment() {
@@ -17,7 +18,7 @@ class LoginFragment : Fragment() {
     }
 
     private lateinit var viewModel: LoginViewModel
-    private lateinit var testButton: TextView //TODO REMOVE
+    private lateinit var fortsettTextView: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,7 +27,7 @@ class LoginFragment : Fragment() {
         val view =  inflater.inflate(R.layout.login_fragment, container, false)
         viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
 
-        testButton = view.findViewById(R.id.testbutton) //TODO REMOVE
+        fortsettTextView = view.findViewById(R.id.fortsett_textView)
 
         return  view
     }
@@ -35,8 +36,14 @@ class LoginFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        testButton.setOnClickListener {
-            findNavController().navigate(R.id.eatInOrTakeAwayFragment)
+        val options = navOptions {
+            anim {
+                enter = R.anim.fragment_fade_enter
+            }
+
+        }
+        fortsettTextView.setOnClickListener {
+            findNavController().navigate(R.id.eatInOrTakeAwayFragment,null, options)
         }
 
 

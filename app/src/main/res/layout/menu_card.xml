@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="380dp">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginVertical="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/custom_border">
+
+
+            <TextView
+                style="@style/SubTitle"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="150dp"
+                android:rotation="-90"
+                android:text="@string/ramen"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/oishii_red"
+                app:layout_constraintEnd_toStartOf="@id/divider_line"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/divider_line" />
+
+            <View
+                android:id="@+id/divider_line"
+                android:layout_width="1dp"
+                android:layout_height="340dp"
+                android:layout_marginStart="60dp"
+                android:background="@color/oishii_red"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="46dp" />
+
+            <TextView
+                android:id="@+id/dish_texView1"
+                style="@style/SubTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="50dp"
+                android:text="vegan ramen"
+                app:layout_constraintStart_toEndOf="@id/divider_line"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/dish_content_texView1"
+                style="@style/bodyText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5sp"
+                android:text="Fresh ramen noddle, tofu.\nscallions, shitake mushrooms,\nleeks, bamboo shoots, pak choi\nin spicy dobanjiang soup."
+                android:textAlignment="textStart"
+                app:layout_constraintStart_toEndOf="@id/divider_line"
+                app:layout_constraintTop_toBottomOf="@id/dish_texView1" />
+
+            <TextView
+                android:id="@+id/allergens_textView1"
+                style="@style/allergenText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5sp"
+                android:text="allegens: hvete, soya, sesam, nøtter"
+                android:textAlignment="textStart"
+                app:layout_constraintStart_toEndOf="@id/divider_line"
+                app:layout_constraintTop_toBottomOf="@id/dish_content_texView1" />
+
+
+            <TextView
+                android:id="@+id/price_textView1"
+                style="@style/PriceText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="70Kr"
+                app:layout_constraintBottom_toBottomOf="@id/dish_content_texView1"
+                app:layout_constraintStart_toEndOf="@id/dish_content_texView1"
+                app:layout_constraintTop_toTopOf="@id/dish_content_texView1" />
+
+
+            <TextView
+                android:id="@+id/dish_texView2"
+                style="@style/SubTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="70dp"
+                android:text="vegan ramen"
+                app:layout_constraintStart_toEndOf="@id/divider_line"
+                app:layout_constraintTop_toBottomOf="@+id/allergens_textView1" />
+
+
+            <TextView
+                android:id="@+id/dish_content_texView2"
+                style="@style/bodyText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5sp"
+                android:text="Fresh ramen noodles, tofu,\nscallions, shitake mushrooms,\nleeks,bamboo shoots, pak choi\nin spicy dobanjiang soup."
+                android:textAlignment="textStart"
+                app:layout_constraintStart_toEndOf="@id/divider_line"
+                app:layout_constraintTop_toBottomOf="@id/dish_texView2" />
+
+            <TextView
+                android:id="@+id/allergens_textView2"
+                style="@style/allergenText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5sp"
+                android:text="allegens: hvete, soya, sesam, nøtter"
+                android:textAlignment="textStart"
+                app:layout_constraintStart_toEndOf="@id/divider_line"
+                app:layout_constraintTop_toBottomOf="@id/dish_content_texView2" />
+
+            <TextView
+                android:id="@+id/price_textView2"
+                style="@style/PriceText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="70Kr"
+                app:layout_constraintBottom_toBottomOf="@id/dish_content_texView2"
+                app:layout_constraintStart_toEndOf="@id/dish_content_texView2"
+                app:layout_constraintTop_toTopOf="@id/dish_content_texView2" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

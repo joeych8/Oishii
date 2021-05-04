@@ -19,15 +19,27 @@
         android:id="@+id/eatInOrTakeAwayFragment"
         android:name="com.example.oishii.order.EatInOrTakeAwayFragment"
         android:label="eat_in_or_take_away_fragment"
-        tools:layout="@layout/eat_in_or_take_away_fragment" />
-    <fragment
-        android:id="@+id/menuFragment"
-        android:name="com.example.oishii.order.MenuFragment"
-        android:label="menu_fragment"
-        tools:layout="@layout/menu_fragment" />
+        tools:layout="@layout/eat_in_or_take_away_fragment" >
+        <action
+            android:id="@+id/action_eatInOrTakeAwayFragment_to_eatInMenuFragment"
+            app:destination="@id/eatInMenuFragment" />
+        <action
+            android:id="@+id/action_eatInOrTakeAwayFragment_to_takeAwayMenuFragment"
+            app:destination="@id/takeAwayMenuFragment" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.oishii.profile.ProfileFragment"
         android:label="profile_fragment"
         tools:layout="@layout/profile_fragment" />
+    <fragment
+        android:id="@+id/takeAwayMenuFragment"
+        android:name="com.example.oishii.order.TakeAwayMenuFragment"
+        android:label="take_away_menu_fragment"
+        tools:layout="@layout/take_away_menu_fragment" />
+    <fragment
+        android:id="@+id/eatInMenuFragment"
+        android:name="com.example.oishii.order.EatInMenuFragment"
+        android:label="eat_in_menu_fragment"
+        tools:layout="@layout/eat_in_menu_fragment" />
 </navigation>

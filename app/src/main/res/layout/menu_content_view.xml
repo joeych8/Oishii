@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent">
+
+    <TextView
+        android:id="@+id/dish_texView1"
+        style="@style/CardSubTitleStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Title"
+        android:textAlignment="textStart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/content_description_textView1"
+        style="@style/BodyTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Content Description"
+        android:textAlignment="textStart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dish_texView1" />
+
+    <TextView
+        android:id="@+id/allergens_textView1"
+        style="@style/AllergenTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="allegens: hvete, soya, sesam, nøtter"
+        android:textAlignment="textStart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/content_description_textView1" />
+
+    <TextView
+        android:id="@+id/price_textView1"
+        style="@style/PriceTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="70kr"
+        android:textAlignment="textStart"
+        app:layout_constraintBottom_toBottomOf="@id/content_description_textView1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/content_description_textView1" />
+
+    <TextView
+        android:id="@+id/addToCart_textView1"
+        style="@style/AddToCartStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="add to cart"
+        android:textAlignment="textStart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/allergens_textView1" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,7 +1,7 @@
-package com.example.oishii.order
+package com.example.oishii.menu
 
 import androidx.lifecycle.ViewModel
 
-class EatInViewModel : ViewModel() {
+class MenuViewModel : ViewModel() {
     // TODO: Implement the ViewModel
 }

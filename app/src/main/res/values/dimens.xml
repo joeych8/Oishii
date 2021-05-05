@@ -3,10 +3,19 @@
 
     <dimen name="icon_medium_width">140dp</dimen>
     <dimen name="icon_medium_height">100dp</dimen>
-    <dimen name="margin_big">200dp</dimen>
-    <dimen name="text_size_big">22sp</dimen>
-    <dimen name="margin_small">100dp</dimen>
+    <dimen name="margin_xl_big">200dp</dimen>
+    <dimen name="margin_xl">100dp</dimen>
+    <dimen name="margin_extra_small">50dp</dimen>
+    <dimen name="text_size_big">20sp</dimen>       <!--skal egentlig være 22, men så for stort ut så valgte 20-->
     <dimen name="text_size_medium">12sp</dimen>
+    <dimen name="text_size_small">10sp</dimen>
+    <dimen name="corner_radius_card">32dp</dimen>
+    <dimen name="medium_margin">20dp</dimen>
+    <dimen name="margin_small">5dp</dimen>
+    <dimen name="divider_line_height">250dp</dimen>
+    <dimen name="divider_line_width">1dp</dimen>
+    <dimen name="card_margin_horizontal">30dp</dimen>
+    <dimen name="card_margin_vertical">5dp</dimen>
 
 
 </resources>

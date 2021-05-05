@@ -3,6 +3,6 @@
         <stroke android:color="@color/oishii_red"
             android:width="2dp"/>
         <solid android:color="@color/oishii_light_pink"/>
-        <corners android:radius="32dp"/>
+        <corners android:radius="@dimen/corner_radius_card"/>
 
 </shape>

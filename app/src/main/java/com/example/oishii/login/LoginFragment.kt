@@ -6,9 +6,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.navOptions
+import com.example.oishii.MainActivity
 import com.example.oishii.R
 
 class LoginFragment : Fragment() {
@@ -35,16 +37,7 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
-        val options = navOptions {
-            anim {
-                enter = R.anim.fragment_fade_enter
-            }
-
-        }
-        fortsettTextView.setOnClickListener {
-            findNavController().navigate(R.id.eatInOrTakeAwayFragment,null, options)
-        }
+        navigation()
 
 
 
@@ -54,5 +47,26 @@ class LoginFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
     }
+
+
+
+
+
+    private fun navigation(){
+
+        val options = navOptions {
+            anim {
+                enter = R.anim.fragment_fade_enter
+                exit = R.anim.fragment_fade_exit
+                popEnter = R.anim.fragment_fade_enter
+                popExit =R.anim.fragment_fade_exit
+            }
+        }
+
+        fortsettTextView.setOnClickListener {
+            findNavController().navigate(R.id.eatInOrTakeAwayFragment,null, options)
+        }
+    }
+
 
 }

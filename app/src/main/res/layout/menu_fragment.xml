@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".order.EatInMenuFragment">
+    tools:context=".menu.MenuFragment">
 
     <TextView
         android:id="@+id/menu_textView1"
-        style="@style/Title"
+        style="@style/TitleTextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/menu"
@@ -18,7 +18,7 @@
 
     <TextView
         android:id="@+id/menu_textView2"
-        style="@style/Title"
+        style="@style/TitleTextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/dine_inn"
@@ -26,16 +26,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/menu_textView1" />
 
-    <ListView
-        android:id="@+id/menu_listView"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/menu_recyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/menu_textView2"
         tools:listitem="@layout/menu_card" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

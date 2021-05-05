@@ -1,43 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Title">
-        <item name="android:textAlignment">center</item>
+    <style name="TitleTextStyle">
         <item name="android:textSize">@dimen/text_size_big</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:fontFamily">@font/belgrano</item>
     </style>
 
-    <style name="SubTitle">
-        <item name="android:textAlignment">center</item>
+    <style name="SubTitleTextStyle">
         <item name="android:textSize">@dimen/text_size_big</item>
         <item name="android:textColor">@color/oishii_red</item>
         <item name="android:fontFamily">@font/prestige_elite</item>
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="bodyText">
-        <item name="android:textAlignment">center</item>
+    <style name="BodyTextStyle">
         <item name="android:textSize">@dimen/text_size_medium</item>
         <item name="android:textColor">@color/oishii_red</item>
         <item name="android:fontFamily">@font/prestige_elite</item>
         <item name="android:textStyle">normal</item>
     </style>
 
-    <style name="PriceText">
-        <item name="android:textAlignment">center</item>
+    <style name="PriceTextStyle">
         <item name="android:textSize">@dimen/text_size_big</item>
         <item name="android:textColor">@color/oishii_red</item>
         <item name="android:fontFamily">@font/belgrano</item>
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="allergenText">
-        <item name="android:textAlignment">center</item>
-        <item name="android:textSize">@dimen/text_size_medium</item>
+    <style name="AllergenTextStyle">
+        <item name="android:textSize">@dimen/text_size_small</item>
         <item name="android:textColor">@color/oishii_dark_blue</item>
         <item name="android:fontFamily">@font/belgrano</item>
         <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="CardSubTitleStyle">
+        <item name="android:textSize">@dimen/text_size_big</item>
+        <item name="android:textColor">@color/oishii_red</item>
+        <item name="android:fontFamily">@font/belgrano</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="AddToCartStyle">
+        <item name="android:textSize">@dimen/text_size_medium</item>
+        <item name="android:textColor">@color/oishii_white</item>
+        <item name="android:fontFamily">@font/belgrano</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginTop">5dp</item>
     </style>
 
 

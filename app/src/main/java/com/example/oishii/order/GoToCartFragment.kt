@@ -8,24 +8,24 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.oishii.R
 
-class EatInMenuFragment : Fragment() {
+class GoToCartFragment : Fragment() {
 
     companion object {
-        fun newInstance() = EatInMenuFragment()
+        fun newInstance() = GoToCartFragment()
     }
 
-    private lateinit var viewModel: EatInViewModel
+    private lateinit var viewModel: GoToCartViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.eat_in_menu_fragment, container, false)
+        return inflater.inflate(R.layout.go_to_cart_fragment, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(EatInViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(GoToCartViewModel::class.java)
         // TODO: Use the ViewModel
     }
 

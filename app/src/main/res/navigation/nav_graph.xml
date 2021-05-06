@@ -43,7 +43,7 @@
     </fragment>
     <fragment
         android:id="@+id/goToCartFragment"
-        android:name="com.example.oishii.order.GoToCartFragment"
+        android:name="com.example.oishii.cart.CartFragment"
         android:label="go_to_cart_fragment"
-        tools:layout="@layout/go_to_cart_fragment" />
+        tools:layout="@layout/cart_fragment" />
 </navigation>

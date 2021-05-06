@@ -7,9 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.navOptions
 import com.example.oishii.R
+import com.example.oishii.menu.MenuFragment
+import kotlinx.android.synthetic.main.menu_content_view.*
 
 class EatInOrTakeAwayFragment : Fragment() {
 
@@ -19,14 +22,17 @@ class EatInOrTakeAwayFragment : Fragment() {
 
     private lateinit var viewModel: EatInOrTakeAwayViewModel
     private lateinit var takeAwayIcon: ImageView
+    private lateinit var eatInIcon: ImageView
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.eat_in_or_take_away_fragment, container, false)
-        takeAwayIcon = view.findViewById(R.id.takeAway_ImageView)
 
+        takeAwayIcon = view.findViewById(R.id.takeAway_ImageView)
+        eatInIcon = view.findViewById(R.id.spiseInne_ImageView)
 
         viewModel = ViewModelProvider(this).get(EatInOrTakeAwayViewModel::class.java)
         return view
@@ -46,6 +52,9 @@ class EatInOrTakeAwayFragment : Fragment() {
     }
 
 
+
+
+
     private fun navigation() {
 
         val options = navOptions {
@@ -59,6 +68,10 @@ class EatInOrTakeAwayFragment : Fragment() {
 
         takeAwayIcon.setOnClickListener {
             findNavController().navigate(R.id.menuFragment, null, options)
+        }
+        eatInIcon.setOnClickListener {
+            findNavController().navigate(R.id.menuFragment, null, options)
+            //TODO
         }
 
 

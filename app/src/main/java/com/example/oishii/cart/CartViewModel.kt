@@ -1,7 +1,7 @@
-package com.example.oishii.order
+package com.example.oishii.cart
 
 import androidx.lifecycle.ViewModel
 
-class GoToCartViewModel : ViewModel() {
+class CartViewModel : ViewModel() {
     // TODO: Implement the ViewModel
 }

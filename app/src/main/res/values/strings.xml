@@ -6,4 +6,6 @@
     <string name="dine_inn">dine inn</string>
     <string name="menu">menu</string>
     <string name="ramen">RAMEN</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

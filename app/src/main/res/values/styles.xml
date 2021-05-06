@@ -50,5 +50,17 @@
         <item name="android:layout_marginTop">5dp</item>
     </style>
 
+    <style name="CartQuantityTextStyle">
+        <item name="android:textSize">@dimen/text_size_medium</item>
+        <item name="android:textColor">@color/oishii_white</item>
+        <item name="android:fontFamily">@font/belgrano</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginStart">5dp</item>
+        <item name="android:layout_marginEnd">5dp</item>
+
+
+
+    </style>
+
 
 </resources>

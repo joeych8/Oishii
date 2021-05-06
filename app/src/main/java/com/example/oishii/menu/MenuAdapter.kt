@@ -18,10 +18,12 @@ class MenuAdapter(var dataSet: List<MenuCardObject>, val context: Context) :
         val menuContentLinearLayout: LinearLayout
 
 
+
         init {
             // Define click listener for the ViewHolder's View.
             verticalTitleCard = view.findViewById(R.id.vertical_card_title)
             menuContentLinearLayout = view.findViewById(R.id.menu_content_linear_layout)
+
         }
     }
 
@@ -38,12 +40,14 @@ class MenuAdapter(var dataSet: List<MenuCardObject>, val context: Context) :
     // Replace the contents of a view (invoked by the layout manager)
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
 
+
         viewHolder.menuContentLinearLayout.removeAllViews()
         viewHolder.verticalTitleCard.text = dataSet[position].title
 
+
         for (menu in dataSet[position].menuContent) {
             val newMenuView = CustomMenuView(context)
-            newMenuView.setText(menu)
+            newMenuView.setMenuContentText(menu)
 
             viewHolder.menuContentLinearLayout.addView(newMenuView)
         }

@@ -40,7 +40,6 @@ class LoginFragment : Fragment() {
         navigation()
 
 
-
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

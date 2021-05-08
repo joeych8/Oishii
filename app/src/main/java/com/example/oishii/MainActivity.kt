@@ -1,10 +1,7 @@
 package com.example.oishii
 
-import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.AttributeSet
-import android.view.View
 import android.widget.ImageView
 
 class MainActivity : AppCompatActivity() {

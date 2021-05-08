@@ -6,7 +6,7 @@
     <dimen name="margin_xl_big">200dp</dimen>
     <dimen name="margin_xl">100dp</dimen>
     <dimen name="margin_extra_small">50dp</dimen>
-    <dimen name="text_size_big">20sp</dimen>       <!--skal egentlig være 22, men så for stort ut så valgte 20-->
+    <dimen name="text_size_big">20sp</dimen>
     <dimen name="text_size_medium">12sp</dimen>
     <dimen name="text_size_small">10sp</dimen>
     <dimen name="corner_radius_card">32dp</dimen>
@@ -18,6 +18,11 @@
     <dimen name="card_margin_vertical">5dp</dimen>
     <dimen name="icon_small_width">70dp</dimen>
     <dimen name="icon_small_height">70dp</dimen>
+    <dimen name="go_to_cart_icon_width">60dp</dimen>
+    <dimen name="go_to_cart_icon_height">60dp</dimen>
+    <dimen name="go_to_cart_end_margin">15dp</dimen>
+    <dimen name="go_to_cart_bottom_margin">10dp</dimen>
+    <dimen name="divider_margin_start">40dp</dimen>
 
 
 </resources>

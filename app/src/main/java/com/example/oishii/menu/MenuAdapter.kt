@@ -8,8 +8,9 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.oishii.R
+import com.example.oishii.database.MenuObject
 
-class MenuAdapter(var dataSet: List<MenuCardObject>, val context: Context) :
+class MenuAdapter(var dataSet: List<MenuCardObject>, val context: Context, val callBack:(MenuObject)-> Unit) :
     RecyclerView.Adapter<MenuAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -34,22 +35,30 @@ class MenuAdapter(var dataSet: List<MenuCardObject>, val context: Context) :
         val view = LayoutInflater.from(viewGroup.context)
             .inflate(R.layout.menu_card, viewGroup, false)
 
+
         return ViewHolder(view)
     }
 
     // Replace the contents of a view (invoked by the layout manager)
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
-
+        val item = dataSet[position]
 
         viewHolder.menuContentLinearLayout.removeAllViews()
-        viewHolder.verticalTitleCard.text = dataSet[position].title
+        viewHolder.verticalTitleCard.text = item.title
 
 
-        for (menu in dataSet[position].menuContent) {
+        for (menu in item.menuContent) {
             val newMenuView = CustomMenuView(context)
-            newMenuView.setMenuContentText(menu)
 
-            viewHolder.menuContentLinearLayout.addView(newMenuView)
+            newMenuView.setMenuContentText(menu)
+            newMenuView.addToCart.setOnClickListener {
+                callBack(menu)
+            }
+
+            viewHolder.menuContentLinearLayout.addView(newMenuView) //ting blir lagt til i linearlayout
+
+
+
         }
 
 

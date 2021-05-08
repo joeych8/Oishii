@@ -15,9 +15,10 @@ interface MenuItemDao {
     @Delete
     fun deleteItem(itemToDelete: MenuObject)
 
-    @Query("SELECT header, priceTag FROM item_table") //TODO HELP HELP ! ! !
+    @Query("SELECT * FROM item_table")
     fun getItems(): List<MenuObject>
 
 
 
 }
+

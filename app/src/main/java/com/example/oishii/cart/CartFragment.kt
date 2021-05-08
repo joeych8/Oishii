@@ -4,15 +4,18 @@ import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
-import android.graphics.BitmapFactory
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.TextView
+import com.example.oishii.OishiiApplication
 import com.example.oishii.R
+import com.example.oishii.database.MenuObject
+import com.example.oishii.menu.CustomMenuView
 
 class CartFragment : Fragment() {
 
@@ -24,6 +27,7 @@ class CartFragment : Fragment() {
     private lateinit var payTv: TextView
     private lateinit var notificationsManager: NotificationManager
     private var channelId = "com.example.oishii.id.notification"
+    private lateinit var cartLinearLayout: LinearLayout
 
 
     override fun onCreateView(
@@ -34,7 +38,8 @@ class CartFragment : Fragment() {
 
         viewModel = ViewModelProvider(this).get(CartViewModel::class.java)
         payTv = view.findViewById(R.id.pay_tv)
-
+        cartLinearLayout = view.findViewById(R.id.cart_content_linear_layout)
+        
 
         return view
     }
@@ -48,8 +53,31 @@ class CartFragment : Fragment() {
         createNotificationChannel()
         setOnclickListeners()
 
+       
+        createViewsToCart()
+
 
     }
+
+
+    private fun createViewsToCart() {
+
+        cartLinearLayout.removeAllViews()
+        viewModel.fetchAllItems() {
+
+            val item = it
+
+            for (dish in item) {
+                val newCartView = CustomCartView(OishiiApplication.application.applicationContext)
+                newCartView.setCarthContentText(dish)
+
+                cartLinearLayout.addView(newCartView)
+
+            }
+        }
+    }
+
+
 
 
     private fun setOnclickListeners() {
@@ -70,7 +98,7 @@ class CartFragment : Fragment() {
             .setSmallIcon(android.R.drawable.ic_dialog_info)
             .build()
 
-        notificationsManager.notify(notificationId,notification)
+        notificationsManager.notify(notificationId, notification)
     }
 
 
@@ -87,5 +115,15 @@ class CartFragment : Fragment() {
 
     }
 
+
+//    for (menu in item.menuContent) {
+//        val newMenuView = CustomMenuView(context)
+//
+//        newMenuView.setMenuContentText(menu)
+//        newMenuView.addToCart.setOnClickListener {
+//            callBack(menu)
+//        }
+//
+//        viewHolder.menuContentLinearLayout.addView(newMenuView) //ting blir lagt til i linearlayout
 
 }

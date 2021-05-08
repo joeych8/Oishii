@@ -1,16 +1,29 @@
 package com.example.oishii.menu
 
-import androidx.lifecycle.LiveData
-import com.example.oishii.database.MenuItemDao
+import com.example.oishii.OishiiApplication
+import com.example.oishii.database.AppDatabase
 import com.example.oishii.database.MenuObject
 
-class MenuRepository(private val menuItemDao: MenuItemDao) {
+    /**Hent ut alle DB funksjonene og legg inn her i repository*/
 
-    val readAllData: List<MenuObject> = menuItemDao.getItems()
+class MenuRepository {
 
-    fun addItem(item: MenuObject){
+
+    val database = AppDatabase.getDatabase(OishiiApplication.application.applicationContext).menuItemDao()
+    private val menuItemDao = database
+
+    fun addItemToDB(item: MenuObject){
         menuItemDao.insertItem(item)
     }
+
+    fun fetchAllItemsFromDB(): List<MenuObject>{
+        return menuItemDao.getItems()
+    }
+
+    fun deleteItemFromDB(itemToDelete: MenuObject){
+        menuItemDao.deleteItem(itemToDelete)
+    }
+
 
 
 }

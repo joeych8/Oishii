@@ -47,13 +47,6 @@ class EatInOrTakeAwayFragment : Fragment() {
 
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-    }
-
-
-
-
 
     private fun navigation() {
 

@@ -7,12 +7,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.navOptions
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.oishii.R
 import com.example.oishii.database.AppDatabase
+import com.example.oishii.database.CartObject
 import com.example.oishii.database.MenuObject
 
 class MenuFragment : Fragment() {
@@ -67,13 +69,6 @@ class MenuFragment : Fragment() {
 
     }
 
-    fun setItemsTocart(){  //TODO note: what do you do if you cant get to the addToCart textview.
-        addToCart.setOnClickListener {
-            val item = MenuObject("Ramen",null,null,12,"AddToCart")
-            viewModel.addItem(item)
-        }
-
-    }
 
 
     private fun initRecyclerView() {
@@ -83,6 +78,7 @@ class MenuFragment : Fragment() {
                 MenuCardObject(
                     "RAMEN", listOf(
                         MenuObject(
+                            0,
                             "vegan ramen",
                             "Fresh ramen noodles, tofu,\nscallions, shitake mushrooms,\nleeks, bamboo shoots, pak choi\nin spicy dobanjiang soup.",
                             "allergens: hvete, soya, sesam, nøtter",
@@ -90,6 +86,7 @@ class MenuFragment : Fragment() {
                             "add to cart"
                         ),
                         MenuObject(
+                            0,
                             "spicy vegan ramen",
                             "Fresh ramen noodles, tofu,\nscallions, shitake mushrooms,\nleeks, bamboo shoots, pak choi\nin spicy dobanjiang soup.",
                             "allergens: hvete, soya, sesam, nøtter",
@@ -100,6 +97,7 @@ class MenuFragment : Fragment() {
                 ), MenuCardObject(
                     "WOK", listOf(
                         MenuObject(
+                            0,
                             "vegan pad thai prik",
                             "Rice noodle sticks with tofu,\nbean sprouts and chinese chieves\nin chilli sauce. Topped with\ncashew and lime.",
                             "allergens: nøtter, soya",
@@ -107,6 +105,7 @@ class MenuFragment : Fragment() {
                             "add to cart"
                         ),
                         MenuObject(
+                            0,
                             "vegan teriyaki noodles",
                             "Wheat noodles woked with tofu,\npak choi, bell peppers, red\nonions and broccoli in teriyaki",
                             "allergens: hvete, soya",
@@ -117,18 +116,21 @@ class MenuFragment : Fragment() {
                 ), MenuCardObject(
                     "DRINKS", listOf(
                         MenuObject(
+                            0,
                             "sakura ramune",
                             null,
                             null,
                             "30kr",
                             "add to cart"
                         ), MenuObject(
+                            0,
                             "coffee",
                             null,
                             null,
                             "20kr",
                             "add to cart"
                         ), MenuObject(
+                            0,
                             "soda",
                             "Coca-cola\nCoca-cola zero\nsparkling water",
                             null,
@@ -137,11 +139,20 @@ class MenuFragment : Fragment() {
                         )
                     )
                 )
-            ), (requireContext())
-        )
+            ),
+            requireContext()
+        ) {
+
+            val itemToCart = it
+            viewModel.addItem(itemToCart)
+            Toast.makeText(requireContext(),"Dish added to cart",Toast.LENGTH_LONG).show()
+            //TODO fortell hva onclicklistener på addToCart skal gjøre. ex: lagre i room, sende til cart fragment osv...
+
+        }
         recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerView.adapter = menuAdapter
     }
+
 
 
 

@@ -14,7 +14,7 @@ class CustomMenuView(context: Context): LinearLayout(context) {
             private val contentDescription: TextView
             private val allergensDescription: TextView
             private val priceTag: TextView
-            private val addToCart: TextView
+            val addToCart: TextView
 
 
 
@@ -39,6 +39,9 @@ class CustomMenuView(context: Context): LinearLayout(context) {
         addToCart.text = menu.addToCart
 
     }
+
+
+
 
 
 

@@ -25,9 +25,9 @@
         tools:layout="@layout/profile_fragment" />
     <fragment
         android:id="@+id/eatInOrTakeAwayFragment"
-        android:name="com.example.oishii.order.EatInOrTakeAwayFragment"
+        android:name="com.example.oishii.order.TakeAwayFragment"
         android:label="eat_in_or_take_away_fragment"
-        tools:layout="@layout/eat_in_or_take_away_fragment" >
+        tools:layout="@layout/take_away_fragment" >
         <action
             android:id="@+id/action_eatInOrTakeAwayFragment_to_menuFragment2"
             app:destination="@id/menuFragment" />

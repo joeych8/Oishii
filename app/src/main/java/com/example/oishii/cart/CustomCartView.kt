@@ -4,7 +4,6 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.appcompat.view.menu.MenuView
 import com.example.oishii.R
 import com.example.oishii.database.MenuObject
 

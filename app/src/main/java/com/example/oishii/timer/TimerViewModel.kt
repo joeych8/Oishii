@@ -1,7 +1,7 @@
-package com.example.oishii.login
+package com.example.oishii.timer
 
 import androidx.lifecycle.ViewModel
 
-class LoginViewModel : ViewModel() {
+class TimerViewModel : ViewModel() {
     // TODO: Implement the ViewModel
 }

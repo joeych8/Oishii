@@ -1,6 +1,6 @@
 package com.example.oishii.login
 
-import androidx.lifecycle.ViewModelProvider
+
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,16 +10,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.navOptions
-import com.example.oishii.MainActivity
 import com.example.oishii.R
 
 class LoginFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = LoginFragment()
-    }
 
-    private lateinit var viewModel: LoginViewModel
+
     private lateinit var fortsettTextView: TextView
 
 
@@ -28,7 +24,7 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.login_fragment, container, false)
-        viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
+
 
         fortsettTextView = view.findViewById(R.id.fortsett_textView)
 
@@ -37,7 +33,7 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        activity?.findViewById<ImageView>(R.id.back_arrow)?.visibility = View.GONE
 
 
         navigation()

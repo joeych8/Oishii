@@ -17,13 +17,10 @@ class MainActivity : AppCompatActivity() {
         backArrow = findViewById(R.id.back_arrow)
 
 
-//TODO
-//        backArrow.visibility = View.GONE
 
-
-    backArrow.setOnClickListener {
-        onBackPressed()
-    }
+        backArrow.setOnClickListener {
+            onBackPressed()
+        }
 
 
     }

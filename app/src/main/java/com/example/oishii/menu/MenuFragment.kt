@@ -17,15 +17,11 @@ import com.example.oishii.database.MenuObject
 
 class MenuFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = MenuFragment()
-    }
 
     private lateinit var viewModel: MenuViewModel
     private lateinit var recyclerView: RecyclerView
     private lateinit var menuAdapter: MenuAdapter
     private lateinit var goToCheckOut: ImageView
-
 
 
     override fun onCreateView(
@@ -40,7 +36,6 @@ class MenuFragment : Fragment() {
         return view
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -48,7 +43,6 @@ class MenuFragment : Fragment() {
         initRecyclerView()
 
     }
-
 
     private fun setClickListeners() {
 
@@ -63,10 +57,7 @@ class MenuFragment : Fragment() {
             }
             findNavController().navigate(R.id.goToCartFragment, null, options)
         }
-
-
     }
-
 
 
     private fun initRecyclerView() {
@@ -140,20 +131,14 @@ class MenuFragment : Fragment() {
             ),
             requireContext()
         ) {
-
+            //clicklistener from MenuAdapter / saving MenuObject to DB
             val itemToCart = it
             viewModel.addItem(itemToCart)
-            Toast.makeText(requireContext(),"Dish added to cart",Toast.LENGTH_SHORT).show()
-            //TODO fortell hva onclicklistener på addToCart skal gjøre. ex: lagre i room, sende til cart fragment osv...
-
+            Toast.makeText(requireContext(), "Dish added to cart", Toast.LENGTH_SHORT).show()
         }
         recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerView.adapter = menuAdapter
     }
-
-
-
-
 
 
 }

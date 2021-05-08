@@ -8,17 +8,17 @@
 
     <ImageView
         android:id="@+id/burger_menu"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_margin="10dp"
+        android:layout_width="@dimen/icon_burger_menu_width"
+        android:layout_height="@dimen/icon_burger_menu_height"
+        android:layout_margin="@dimen/icon_burger_menu_margin"
         android:src="@drawable/oishii_burger_menu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/back_arrow"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="@dimen/icon_arrow_width"
+        android:layout_height="@dimen/icon_arrow_height"
         android:layout_marginTop="15dp"
         android:layout_marginStart="15dp"
         android:src="@drawable/oishii_arrow"

@@ -44,7 +44,7 @@
 
     <style name="AddToCartStyle">
         <item name="android:textSize">@dimen/text_size_medium</item>
-        <item name="android:textColor">@color/oishii_white</item>
+        <item name="android:textColor">@drawable/cart_text_color</item>
         <item name="android:fontFamily">@font/belgrano</item>
         <item name="android:textStyle">bold</item>
         <item name="android:layout_marginTop">5dp</item>

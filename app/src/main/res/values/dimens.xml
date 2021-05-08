@@ -23,6 +23,11 @@
     <dimen name="go_to_cart_end_margin">15dp</dimen>
     <dimen name="go_to_cart_bottom_margin">10dp</dimen>
     <dimen name="divider_margin_start">40dp</dimen>
+    <dimen name="icon_arrow_width">40dp</dimen>
+    <dimen name="icon_arrow_height">40dp</dimen>
+    <dimen name="icon_burger_menu_width">60dp</dimen>
+    <dimen name="icon_burger_menu_height">60dp</dimen>
+    <dimen name="icon_burger_menu_margin">10dp</dimen>
 
 
 </resources>

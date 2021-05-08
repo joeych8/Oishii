@@ -4,7 +4,6 @@ import com.example.oishii.OishiiApplication
 import com.example.oishii.database.AppDatabase
 import com.example.oishii.database.MenuObject
 
-/**Hent ut alle DB funksjonene som trengs i MenuFrag og legg inn her*/
 
 class MenuRepository {
 

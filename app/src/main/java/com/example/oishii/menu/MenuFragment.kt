@@ -13,8 +13,6 @@ import androidx.navigation.navOptions
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.oishii.R
-import com.example.oishii.database.AppDatabase
-import com.example.oishii.database.CartObject
 import com.example.oishii.database.MenuObject
 
 class MenuFragment : Fragment() {
@@ -145,7 +143,7 @@ class MenuFragment : Fragment() {
 
             val itemToCart = it
             viewModel.addItem(itemToCart)
-            Toast.makeText(requireContext(),"Dish added to cart",Toast.LENGTH_LONG).show()
+            Toast.makeText(requireContext(),"Dish added to cart",Toast.LENGTH_SHORT).show()
             //TODO fortell hva onclicklistener på addToCart skal gjøre. ex: lagre i room, sende til cart fragment osv...
 
         }

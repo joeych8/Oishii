@@ -55,8 +55,7 @@ class MenuAdapter(var dataSet: List<MenuCardObject>, val context: Context, val c
                 callBack(menu)
             }
 
-            viewHolder.menuContentLinearLayout.addView(newMenuView) //ting blir lagt til i linearlayout
-
+            viewHolder.menuContentLinearLayout.addView(newMenuView) //CustomMenuView blir lagt til i menuContentLinearLayout
 
 
         }

@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 data class MenuObject(
 
     @PrimaryKey(autoGenerate = true)
-    var id: Int = 0,  //TODO New Obj
+    var id: Int = 0,
     val header: String,
     val contentDescription: String?,
     val allergensDescription: String?,

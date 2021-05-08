@@ -19,7 +19,7 @@ class MenuViewModel : ViewModel() {
 
     private val repository = MenuRepository()
     //val cartListLiveData: MutableLiveData<List<MenuObject>> = MutableLiveData()
-    //LiveData
+
 
 
     fun addItem(item: MenuObject){

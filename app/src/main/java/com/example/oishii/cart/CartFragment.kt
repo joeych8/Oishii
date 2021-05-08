@@ -39,7 +39,9 @@ class CartFragment : Fragment() {
         viewModel = ViewModelProvider(this).get(CartViewModel::class.java)
         payTv = view.findViewById(R.id.pay_tv)
         cartLinearLayout = view.findViewById(R.id.cart_content_linear_layout)
-        
+        notificationsManager =
+            requireActivity().getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+
 
         return view
     }
@@ -48,42 +50,45 @@ class CartFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        notificationsManager =
-            requireActivity().getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+
         createNotificationChannel()
         setOnclickListeners()
-
-       
         createViewsToCart()
 
 
     }
 
 
+    //setter data fra db inn i CustomCartView //TODO stopper når man åpner handlevogn? Error:Only the original thread that created a view hierarchy can touch its views **Solution: runOnUiThread**
     private fun createViewsToCart() {
 
         cartLinearLayout.removeAllViews()
-        viewModel.fetchAllItems() {
+        viewModel.fetchAllItems {
 
             val item = it
 
-            for (dish in item) {
-                val newCartView = CustomCartView(OishiiApplication.application.applicationContext)
-                newCartView.setCarthContentText(dish)
+            /**For Loop explained to myself like im brain dead*/
+            //for hver dish i item(som er MenuObject) så skal det først lages et nytt view, som bruker funksjonen inne i newCartView(setCartContentText) til å sette teksten inn i dish.
+            // tilslutt ber vi cartLinearLayout om å legge til det nye viewet(newCartView)
 
-                cartLinearLayout.addView(newCartView)
-
+            activity?.runOnUiThread {
+                for (dish in item) {
+                    val newCartView = CustomCartView(requireContext())
+                    newCartView.setCarthContentText(dish)
+                    cartLinearLayout.addView(newCartView)
+                }
             }
         }
     }
 
 
-
-
     private fun setOnclickListeners() {
+
 
         payTv.setOnClickListener {
             createAndSendNotification()
+            viewModel.deleteAllItems()
+            cartLinearLayout.removeAllViews()
 
         }
 
@@ -114,16 +119,4 @@ class CartFragment : Fragment() {
         notificationsManager.createNotificationChannel(channel)
 
     }
-
-
-//    for (menu in item.menuContent) {
-//        val newMenuView = CustomMenuView(context)
-//
-//        newMenuView.setMenuContentText(menu)
-//        newMenuView.addToCart.setOnClickListener {
-//            callBack(menu)
-//        }
-//
-//        viewHolder.menuContentLinearLayout.addView(newMenuView) //ting blir lagt til i linearlayout
-
 }

@@ -15,6 +15,9 @@ interface MenuItemDao {
     @Delete
     fun deleteItem(itemToDelete: MenuObject)
 
+    @Query("DELETE FROM item_table")
+    fun deleteAllItems()
+
     @Query("SELECT * FROM item_table")
     fun getItems(): List<MenuObject>
 

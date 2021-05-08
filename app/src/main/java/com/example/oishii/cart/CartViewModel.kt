@@ -10,20 +10,28 @@ import kotlinx.coroutines.launch
 
 class CartViewModel : ViewModel() {
 
-    private val repository = MenuRepository()
+    private val repository = CartRepository()
 
 
-
-    fun fetchAllItems(callBack:(List<MenuObject>) -> Unit){
+    fun fetchAllItems(callBack: (List<MenuObject>) -> Unit) {
         CoroutineScope(Dispatchers.IO).launch {
             val list = repository.fetchAllItemsFromDB()
             callBack(list)
-
         }
-
-
     }
 
+
+    fun deleteItem(item: MenuObject) {
+        CoroutineScope(Dispatchers.IO).launch {
+            repository.deleteItemFromDB(item)
+        }
+    }
+
+    fun deleteAllItems() {
+        CoroutineScope(Dispatchers.IO).launch {
+            repository.deleteAllItemsFromDB()
+        }
+    }
 
 //    private val repository = MenuRepository()
 //    val cartListLiveData: MutableLiveData<List<MenuObject>> = MutableLiveData()
@@ -36,7 +44,6 @@ class CartViewModel : ViewModel() {
 //            cartListLiveData.postValue(list)
 //        }
 //    }
-
 
 
 }

@@ -1,7 +1,9 @@
 package com.example.oishii
 
+import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageView
 
 class MainActivity : AppCompatActivity() {
@@ -13,6 +15,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         backArrow = findViewById(R.id.back_arrow)
+
+
+//TODO
+//        backArrow.visibility = View.GONE
 
 
     backArrow.setOnClickListener {

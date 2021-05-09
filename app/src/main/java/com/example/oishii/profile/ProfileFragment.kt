@@ -11,12 +11,9 @@ import com.example.oishii.R
 
 class ProfileFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = ProfileFragment()
-    }
 
     private lateinit var viewModel: ProfileViewModel
-    private lateinit var countDownTimer: CountDownTimer
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,6 +35,6 @@ class ProfileFragment : Fragment() {
 
 
     }
-    
+
 
 }

@@ -15,7 +15,11 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.biometric.BiometricPrompt
 import androidx.core.content.ContextCompat
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.navOptions
 import com.example.oishii.R
+import com.example.oishii.database.MenuObject
+import kotlinx.android.synthetic.main.cart_content_view.*
 
 import java.util.concurrent.Executor
 
@@ -61,7 +65,7 @@ class CartFragment : Fragment() {
     }
 
 
-    //setter data fra db inn i CustomCartView //TODO stopper når man åpner handlevogn? Error:Only the original thread that created a view hierarchy can touch its views **Solution: runOnUiThread**
+    //setter data fra db inn i CustomCartView
     private fun createViewsToCart() {
 
         cartLinearLayout.removeAllViews()
@@ -69,15 +73,17 @@ class CartFragment : Fragment() {
         viewModel.fetchAllItems {
 
             val item = it
-            /**For Loop explained to myself like im brain dead*/
-            //for hver dish i item(som er MenuObject) så skal det først lages et nytt view, som bruker funksjonen inne i newCartView(setCartContentText) til å sette teksten inn i dish.
+
+            //for hver dish i "item" som er en liste av MenuObject(List<MenuObject>) så skal det først lages et nytt view, som bruker funksjonen inne i newCartView(setCartContentText) til å sette teksten inn i dish.
             // tilslutt ber vi cartLinearLayout om å legge til det nye viewet(newCartView)
 
             activity?.runOnUiThread {
                 for (dish in item) {
                     val newCartView = CustomCartView(requireContext())
                     newCartView.setCarthContentText(dish)
+
                     cartLinearLayout.addView(newCartView)
+
                 }
             }
         }
@@ -89,6 +95,7 @@ class CartFragment : Fragment() {
         payTv.setOnClickListener {
             biometricPrompt.authenticate(promptInfo)
         }
+
     }
 
     private fun createAndSendNotification() {
@@ -138,6 +145,9 @@ class CartFragment : Fragment() {
                     viewModel.deleteAllItems()
                     cartLinearLayout.removeAllViews()
                     Toast.makeText(context, "Authentication successful", Toast.LENGTH_SHORT).show()
+                    navigateToTimerFragment()
+
+
                 }
 
                 override fun onAuthenticationFailed() {
@@ -157,6 +167,19 @@ class CartFragment : Fragment() {
             .setSubtitle("pay for food")
             .setNegativeButtonText("Use account password")
             .build()
+
+    }
+
+    private fun navigateToTimerFragment() {
+        val options = navOptions {
+            anim {
+                enter = R.anim.fragment_fade_enter
+                exit = R.anim.fragment_fade_exit
+                popEnter = R.anim.fragment_fade_enter
+                popExit = R.anim.fragment_fade_exit
+            }
+        }
+        findNavController().navigate(R.id.timerFragment, null, options)
 
     }
 

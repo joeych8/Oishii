@@ -46,7 +46,6 @@ class MenuAdapter(var dataSet: List<MenuCardObject>, val context: Context, val c
         viewHolder.menuContentLinearLayout.removeAllViews()
         viewHolder.verticalTitleCard.text = item.title
 
-
         for (menu in item.menuContent) {
             val newMenuView = CustomMenuView(context)
 
@@ -56,8 +55,6 @@ class MenuAdapter(var dataSet: List<MenuCardObject>, val context: Context, val c
             }
 
             viewHolder.menuContentLinearLayout.addView(newMenuView) //CustomMenuView blir lagt til i menuContentLinearLayout
-
-
         }
 
 

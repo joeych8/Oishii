@@ -15,7 +15,6 @@ import com.example.oishii.R
 class LoginFragment : Fragment() {
 
 
-
     private lateinit var fortsettTextView: TextView
 
 
@@ -54,7 +53,7 @@ class LoginFragment : Fragment() {
         }
 
         fortsettTextView.setOnClickListener {
-            findNavController().navigate(R.id.eatInOrTakeAwayFragment, null, options)
+            findNavController().navigate(R.id.takeAwayFragment, null, options)
         }
     }
 

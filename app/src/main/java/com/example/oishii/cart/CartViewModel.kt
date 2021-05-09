@@ -19,9 +19,10 @@ class CartViewModel : ViewModel() {
     }
 
     //TODO
-    fun deleteItem(item: MenuObject) {
+    fun deleteItem(itemToDelete: MenuObject) {
         CoroutineScope(Dispatchers.IO).launch {
-            repository.deleteItemFromDB(item)
+            repository.deleteItemFromDB(itemToDelete)
+
         }
     }
 

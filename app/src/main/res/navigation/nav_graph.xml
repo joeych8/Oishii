@@ -12,25 +12,8 @@
         android:label="login_fragment"
         tools:layout="@layout/login_fragment" >
         <action
-            android:id="@+id/action_loginFragment_to_profileFragment"
-            app:destination="@id/profileFragment" />
-        <action
-            android:id="@+id/action_loginFragment_to_eatInOrTakeAwayFragment"
-            app:destination="@id/eatInOrTakeAwayFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/profileFragment"
-        android:name="com.example.oishii.profile.ProfileFragment"
-        android:label="profile_fragment"
-        tools:layout="@layout/profile_fragment" />
-    <fragment
-        android:id="@+id/eatInOrTakeAwayFragment"
-        android:name="com.example.oishii.order.TakeAwayFragment"
-        android:label="eat_in_or_take_away_fragment"
-        tools:layout="@layout/take_away_fragment" >
-        <action
-            android:id="@+id/action_eatInOrTakeAwayFragment_to_menuFragment2"
-            app:destination="@id/menuFragment" />
+            android:id="@+id/action_loginFragment_to_takeAwayFragment"
+            app:destination="@id/takeAwayFragment" />
     </fragment>
     <fragment
         android:id="@+id/menuFragment"
@@ -45,5 +28,27 @@
         android:id="@+id/goToCartFragment"
         android:name="com.example.oishii.cart.CartFragment"
         android:label="go_to_cart_fragment"
-        tools:layout="@layout/cart_fragment" />
+        tools:layout="@layout/cart_fragment" >
+        <action
+            android:id="@+id/action_goToCartFragment_to_timerFragment"
+            app:destination="@id/timerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/timerFragment"
+        android:name="com.example.oishii.timer.TimerFragment"
+        android:label="timer_fragment"
+        tools:layout="@layout/timer_fragment" >
+        <action
+            android:id="@+id/action_timerFragment_to_takeAwayFragment2"
+            app:destination="@id/takeAwayFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/takeAwayFragment"
+        android:name="com.example.oishii.order.TakeAwayFragment"
+        android:label="take_away_fragment"
+        tools:layout="@layout/take_away_fragment" >
+        <action
+            android:id="@+id/action_takeAwayFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
 </navigation>

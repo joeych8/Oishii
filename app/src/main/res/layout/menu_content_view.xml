@@ -11,7 +11,7 @@
         style="@style/CardSubTitleStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Title"
+        android:text="@string/menu_content_title_text"
         android:textAlignment="textStart"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -34,7 +34,7 @@
         android:textAlignment="textStart"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/content_description_textView1"
-        tools:text="allegens: hvete, soya, sesam, nøtter" />
+        tools:text="@string/menu_content_allergen_example_text" />
 
     <TextView
         android:id="@+id/price_textView1"
@@ -45,7 +45,7 @@
         app:layout_constraintBottom_toBottomOf="@id/content_description_textView1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/content_description_textView1"
-        tools:text="70kr" />
+        tools:text="@string/menu_content_price_example_text" />
 
     <TextView
         android:id="@+id/addToCart_textView1"
@@ -57,7 +57,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/allergens_textView1"
-        tools:text="add to cart"
+        tools:text="@string/menu_content_add_to_cart_example_text"
         tools:textColor="@color/black" />
 
 

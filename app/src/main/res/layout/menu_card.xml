@@ -21,15 +21,15 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/custom_border"
-            android:padding="5dp">
+            android:padding="@dimen/card_padding">
 
             <TextView
                 android:id="@+id/vertical_card_title"
                 style="@style/SubTitleTextStyle"
-                android:layout_width="300dp"
+                android:layout_width="@dimen/vertical_text_width"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/medium_margin"
-                android:layout_marginTop="150dp"
+                android:layout_marginTop="@dimen/vertical_text_top_margin"
                 android:rotation="-90"
                 android:text="@string/ramen"
                 android:textAlignment="viewEnd"

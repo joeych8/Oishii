@@ -54,6 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
         android:focusable="true"
+        android:padding="@dimen/add_to_cart_button_padding"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/allergens_textView1"

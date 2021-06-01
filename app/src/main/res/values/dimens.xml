@@ -37,6 +37,7 @@
     <dimen name="vertical_text_width">300dp</dimen>
     <dimen name="vertical_text_top_margin">150dp</dimen>
     <dimen name="take_away_text_box_padding">20dp</dimen>
+    <dimen name="add_to_cart_button_padding">5dp</dimen>
 
 
 </resources>

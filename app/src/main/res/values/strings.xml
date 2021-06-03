@@ -11,4 +11,15 @@
     <string name="tilbake_til_forsiden">tilbake til forsiden</string>
     <string name="maten_din_er_klar_til_henting_om">maten din er klar til henting om</string>
     <string name="takk_for_bestillingen">takk for bestillingen!</string>
+    <string name="title_text">Title</string>
+    <string name="price_text">70kr</string>
+    <string name="subtract_symbol">-</string>
+    <string name="quantity_text">1</string>
+    <string name="add_symbol">+</string>
+    <string name="check_out_text">til betaling</string>
+    <string name="menu_content_title_text">Title</string>
+    <string name="menu_content_allergen_example_text">allegens: hvete, soya, sesam, nøtter</string>
+    <string name="menu_content_price_example_text">70kr</string>
+    <string name="menu_content_add_to_cart_example_text">add to cart</string>
+    <string name="timer_example_text">10</string>
 </resources>

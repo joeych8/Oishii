@@ -6,8 +6,8 @@ import com.example.oishii.database.MenuObject
 
 class CartRepository {
 
-    val database = AppDatabase.getDatabase(OishiiApplication.application.applicationContext).menuItemDao()
-    private val CartItemDao = database
+    val database = AppDatabase.getDatabase(OishiiApplication.application.applicationContext)
+    private val CartItemDao = database.menuItemDao()
 
     fun fetchAllItemsFromDB(): List<MenuObject>{
         return CartItemDao.getItems()

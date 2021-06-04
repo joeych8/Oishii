@@ -1,9 +1,5 @@
 package com.example.oishii.cart
 
-import android.app.Notification
-import android.app.NotificationChannel
-import android.app.NotificationManager
-import android.content.Context
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -18,18 +14,13 @@ import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.navOptions
 import com.example.oishii.R
-import com.example.oishii.database.MenuObject
-import kotlinx.android.synthetic.main.cart_content_view.*
-
+import com.example.oishii.notification.OishiiNotificationManager
 import java.util.concurrent.Executor
 
 class CartFragment : Fragment() {
 
-
     private lateinit var viewModel: CartViewModel
     private lateinit var payTv: TextView
-    private lateinit var notificationsManager: NotificationManager
-    private var channelId = "com.example.oishii.id.notification"
     private lateinit var cartLinearLayout: LinearLayout
     private lateinit var executor: Executor
     private lateinit var biometricPrompt: BiometricPrompt
@@ -52,12 +43,9 @@ class CartFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        notificationsManager =
-            requireActivity().getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         executor = ContextCompat.getMainExecutor(requireContext())
 
         biometricAuthentication()
-        createNotificationChannel()
         setOnclickListeners()
         createViewsToCart()
 
@@ -98,32 +86,6 @@ class CartFragment : Fragment() {
 
     }
 
-    private fun createAndSendNotification() {
-
-        val notificationId = 321123
-        val notification = Notification.Builder(requireContext(), channelId)
-            .setContentTitle("Order confirmation")
-            .setContentText("Payment successful! Your order is being processed!")
-            .setSmallIcon(android.R.drawable.ic_dialog_info)
-            .build()
-
-        notificationsManager.notify(notificationId, notification)
-
-    }
-
-
-    private fun createNotificationChannel() {
-
-        val importance = NotificationManager.IMPORTANCE_HIGH
-        val channel = NotificationChannel(channelId, "Order confirmations", importance)
-
-        channel.description = "Makes a sound and appears as a heads-up notification"
-        channel.enableVibration(true)
-        channel.vibrationPattern = longArrayOf(100, 200, 300, 400, 500, 400, 500, 400)
-        channel.setShowBadge(true)
-        notificationsManager.createNotificationChannel(channel)
-    }
-
     private fun biometricAuthentication() {
 
         biometricPrompt =
@@ -141,13 +103,14 @@ class CartFragment : Fragment() {
                 override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
                     super.onAuthenticationSucceeded(result)
                     //auth succeed, do task
-                    createAndSendNotification()
+                    OishiiNotificationManager.createAndSendNotification(
+                        "Order confirmation",
+                        "Payment successful! Your order is being processed!"
+                    )
                     viewModel.deleteAllItems()
                     cartLinearLayout.removeAllViews()
                     Toast.makeText(context, "Authentication successful", Toast.LENGTH_SHORT).show()
                     navigateToTimerFragment()
-
-
                 }
 
                 override fun onAuthenticationFailed() {
@@ -165,9 +128,8 @@ class CartFragment : Fragment() {
         promptInfo = BiometricPrompt.PromptInfo.Builder()
             .setTitle("BioMetric Authentication")
             .setSubtitle("pay for food")
-            .setNegativeButtonText("Use account password")
+            .setNegativeButtonText("Cancel")
             .build()
-
     }
 
     private fun navigateToTimerFragment() {

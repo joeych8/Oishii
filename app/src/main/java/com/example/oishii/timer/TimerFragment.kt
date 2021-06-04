@@ -1,9 +1,5 @@
 package com.example.oishii.timer
 
-import android.app.Notification
-import android.app.NotificationChannel
-import android.app.NotificationManager
-import android.content.Context
 import android.os.Bundle
 import android.os.CountDownTimer
 import androidx.fragment.app.Fragment
@@ -14,16 +10,14 @@ import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.navOptions
 import com.example.oishii.R
+import com.example.oishii.notification.OishiiNotificationManager
 
 
 class TimerFragment : Fragment() {
 
-
     private lateinit var timerTv: TextView
     private lateinit var backToStartTv: TextView
     private lateinit var secondsTv: TextView
-    private lateinit var notificationsManager: NotificationManager
-    private var channelId = "com.example.oishii.id.notificationFoodFinish"
     var counter = 10
 
     override fun onCreateView(
@@ -40,14 +34,9 @@ class TimerFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         startTimeCounter()
-        notificationsManager =
-            requireActivity().getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-
-
-        createNotificationChannel()
         setOnclickListeners()
-
 
     }
 
@@ -82,39 +71,15 @@ class TimerFragment : Fragment() {
 
             override fun onFinish() {
 
-                createAndSendNotification()
+                OishiiNotificationManager.createAndSendNotification(
+                    "Order Complete!",
+                    "Your order is completed and ready for pickup"
+                )
                 timerTv.visibility = View.GONE
                 secondsTv.visibility = View.GONE
 
             }
         }.start()
     }
-
-
-    private fun createNotificationChannel() {
-
-        val importance = NotificationManager.IMPORTANCE_HIGH
-        val channel = NotificationChannel(channelId, "Order Complete", importance)
-
-        channel.description = "Makes a sound and appears as a heads-up notification"
-        channel.enableVibration(true)
-        channel.vibrationPattern = longArrayOf(100, 200, 300, 400, 500, 400, 500, 400)
-        channel.setShowBadge(true)
-        notificationsManager.createNotificationChannel(channel)
-    }
-
-    private fun createAndSendNotification() {
-
-        val notificationId = 65465
-        val notification = Notification.Builder(requireContext(), channelId)
-            .setContentTitle("Order Complete!")
-            .setContentText("Your order is completed and ready for pickup")
-            .setSmallIcon(android.R.drawable.ic_dialog_info)
-            .build()
-
-        notificationsManager.notify(notificationId, notification)
-
-    }
-
 
 }

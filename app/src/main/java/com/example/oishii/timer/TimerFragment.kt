@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.activity.OnBackPressedDispatcher
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.navOptions
 import com.example.oishii.R
@@ -38,6 +39,7 @@ class TimerFragment : Fragment() {
         startTimeCounter()
         setOnclickListeners()
 
+
     }
 
     private fun setOnclickListeners() {
@@ -47,21 +49,12 @@ class TimerFragment : Fragment() {
     }
 
     private fun navigation() {
-        val options = navOptions {
-            anim {
-                enter = R.anim.fragment_fade_enter
-                exit = R.anim.fragment_fade_exit
-                popEnter = R.anim.fragment_fade_enter
-                popExit = R.anim.fragment_fade_exit
-            }
-        }
-        findNavController().navigate(R.id.takeAwayFragment, null, options)
 
-
+        findNavController().navigate(R.id.action_timerFragment_to_takeAwayFragment2)
     }
 
 
-    fun startTimeCounter() {
+    private fun startTimeCounter() {
         val countTime = timerTv
         object : CountDownTimer(10000, 1000) {
             override fun onTick(millisUntilFinished: Long) {

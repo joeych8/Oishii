@@ -133,15 +133,8 @@ class CartFragment : Fragment() {
     }
 
     private fun navigateToTimerFragment() {
-        val options = navOptions {
-            anim {
-                enter = R.anim.fragment_fade_enter
-                exit = R.anim.fragment_fade_exit
-                popEnter = R.anim.fragment_fade_enter
-                popExit = R.anim.fragment_fade_exit
-            }
-        }
-        findNavController().navigate(R.id.timerFragment, null, options)
+
+        findNavController().navigate(R.id.action_goToCartFragment_to_timerFragment)
 
     }
 

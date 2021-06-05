@@ -47,15 +47,8 @@ class MenuFragment : Fragment() {
     private fun setClickListeners() {
 
         goToCheckOut.setOnClickListener {
-            val options = navOptions {
-                anim {
-                    enter = R.anim.fragment_fade_enter
-                    exit = R.anim.fragment_fade_exit
-                    popEnter = R.anim.fragment_fade_enter
-                    popExit = R.anim.fragment_fade_exit
-                }
-            }
-            findNavController().navigate(R.id.goToCartFragment, null, options)
+
+            findNavController().navigate(R.id.action_menuFragment2_to_goToCartFragment)
         }
     }
 

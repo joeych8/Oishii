@@ -41,17 +41,8 @@ class TakeAwayFragment : Fragment() {
 
     private fun navigation() {
 
-        val options = navOptions {
-            anim {
-                enter = R.anim.fragment_fade_enter
-                exit = R.anim.fragment_fade_exit
-                popEnter = R.anim.fragment_fade_enter
-                popExit = R.anim.fragment_fade_exit
-            }
-        }
-
         takeAwayIcon.setOnClickListener {
-            findNavController().navigate(R.id.menuFragment, null, options)
+            findNavController().navigate(R.id.action_takeAwayFragment_to_menuFragment)
         }
 
 

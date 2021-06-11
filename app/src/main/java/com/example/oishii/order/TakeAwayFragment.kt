@@ -1,6 +1,5 @@
 package com.example.oishii.order
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.navOptions
 import com.example.oishii.R
 
 class TakeAwayFragment : Fragment() {

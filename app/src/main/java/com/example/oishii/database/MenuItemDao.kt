@@ -22,6 +22,5 @@ interface MenuItemDao {
     fun getItems(): List<MenuObject>
 
 
-
 }
 

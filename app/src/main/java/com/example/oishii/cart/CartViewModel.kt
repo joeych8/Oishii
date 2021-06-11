@@ -18,11 +18,9 @@ class CartViewModel : ViewModel() {
         }
     }
 
-    //TODO
     fun deleteItem(itemToDelete: MenuObject) {
         CoroutineScope(Dispatchers.IO).launch {
             repository.deleteItemFromDB(itemToDelete)
-
         }
     }
 
@@ -31,8 +29,6 @@ class CartViewModel : ViewModel() {
             repository.deleteAllItemsFromDB()
         }
     }
-
-
 
 
 }

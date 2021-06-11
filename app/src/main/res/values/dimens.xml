@@ -1,43 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <dimen name="icon_medium_width">140dp</dimen>
-    <dimen name="icon_medium_height">100dp</dimen>
-    <dimen name="margin_xl_big">200dp</dimen>
-    <dimen name="margin_xl">100dp</dimen>
+    <!--Margin-->
+    <dimen name="margin_card_medium">10dp</dimen>
     <dimen name="margin_extra_small">50dp</dimen>
+    <dimen name="margin_xl">100dp</dimen>
+    <dimen name="margin_xl_big">200dp</dimen>
+    <dimen name="margin_map_top">15dp</dimen>
+    <dimen name="margin_small">5dp</dimen>
+    <dimen name="margin_medium">20dp</dimen>
+    <dimen name="margin_go_to_cart_end">15dp</dimen>
+    <dimen name="margin_go_to_cart_bottom">10dp</dimen>
+    <dimen name="margin_back_arrow">15dp</dimen>
+    <dimen name="margin_vertical_text_top">150dp</dimen>
+    <dimen name="margin_icon_burger_menu">10dp</dimen>
+    <dimen name="margin_divider_start">40dp</dimen>
+    <dimen name="margin_burger_menu_text_spacing">25dp</dimen>
+    <!--Padding-->
+    <dimen name="padding_take_away_text_box">20dp</dimen>
+    <dimen name="padding_add_to_cart_button">6dp</dimen>
+    <dimen name="padding_burger_cross_">15dp</dimen>
+    <dimen name="padding_button">10dp</dimen>
+    <dimen name="padding_card">5dp</dimen>
+    <dimen name="padding_total_sum_box">10dp</dimen>
+    <dimen name="padding_bottom_cart_content">30dp</dimen>
+    <!--Text size-->
     <dimen name="text_size_big">20sp</dimen>
     <dimen name="text_size_xl">36sp</dimen>
+    <dimen name="contact_text_size">16sp</dimen>
     <dimen name="text_size_medium">12sp</dimen>
     <dimen name="text_size_small">10sp</dimen>
-    <dimen name="corner_radius_card">32dp</dimen>
-    <dimen name="medium_margin">20dp</dimen>
-    <dimen name="margin_small">5dp</dimen>
+    <dimen name="custom_x_button_size">50sp</dimen>
+    <!--Height and width-->
     <dimen name="divider_line_height">250dp</dimen>
+    <dimen name="icon_medium_height">100dp</dimen>
+    <dimen name="main_logo_height">200dp</dimen>
+    <dimen name="icon_small_height">70dp</dimen>
+    <dimen name="go_to_cart_icon_height">60dp</dimen>
+    <dimen name="icon_burger_menu_height">60dp</dimen>
+    <dimen name="icon_arrow_height">40dp</dimen>
+    <dimen name="icon_medium_width">140dp</dimen>
     <dimen name="divider_line_width">1dp</dimen>
+    <dimen name="icon_small_width">70dp</dimen>
+    <dimen name="go_to_cart_icon_width">60dp</dimen>
+    <dimen name="icon_arrow_width">40dp</dimen>
+    <dimen name="icon_burger_menu_width">60dp</dimen>
+    <dimen name="card_boarder_width">2dp</dimen>
+    <dimen name="main_logo_width">200dp</dimen>
+    <dimen name="vertical_text_width">300dp</dimen>
+    <dimen name="place_holder_text_width">300dp</dimen>
     <dimen name="card_margin_horizontal">30dp</dimen>
     <dimen name="card_margin_vertical">5dp</dimen>
-    <dimen name="icon_small_width">70dp</dimen>
-    <dimen name="icon_small_height">70dp</dimen>
-    <dimen name="go_to_cart_icon_width">60dp</dimen>
-    <dimen name="go_to_cart_icon_height">60dp</dimen>
-    <dimen name="go_to_cart_end_margin">15dp</dimen>
-    <dimen name="go_to_cart_bottom_margin">10dp</dimen>
-    <dimen name="divider_margin_start">40dp</dimen>
-    <dimen name="icon_arrow_width">40dp</dimen>
-    <dimen name="icon_arrow_height">40dp</dimen>
-    <dimen name="icon_burger_menu_width">60dp</dimen>
-    <dimen name="icon_burger_menu_height">60dp</dimen>
-    <dimen name="icon_burger_menu_margin">10dp</dimen>
-    <dimen name="card_boarder_width">2dp</dimen>
-    <dimen name="back_arrow_margin">15dp</dimen>
-    <dimen name="card_padding">5dp</dimen>
-    <dimen name="main_logo_width">200dp</dimen>
-    <dimen name="main_logo_height">200dp</dimen>
-    <dimen name="vertical_text_width">300dp</dimen>
-    <dimen name="vertical_text_top_margin">150dp</dimen>
-    <dimen name="take_away_text_box_padding">20dp</dimen>
-    <dimen name="add_to_cart_button_padding">5dp</dimen>
+    <dimen name="custom_card_height">310dp</dimen>
+    <!--Corner radius-->
+    <dimen name="corner_radius_card">32dp</dimen>
+    <dimen name="map_corner_radius">30dp</dimen>
+    <dimen name="total_sum_box_width">200dp</dimen>
+    <dimen name="cart_logo_elevation">50dp</dimen>
 
 
 </resources>

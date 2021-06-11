@@ -10,22 +10,19 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.oishii.R
 import com.example.oishii.database.MenuObject
 
-class MenuAdapter(var dataSet: List<MenuCardObject>, val context: Context, val callBack:(MenuObject)-> Unit) :
+class MenuAdapter(
+    private var dataSet: List<MenuCardObject>,
+    val context: Context,
+    val callBack: (MenuObject) -> Unit
+) :
     RecyclerView.Adapter<MenuAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
-        val verticalTitleCard: TextView
-        val menuContentLinearLayout: LinearLayout
+        val verticalTitleCard: TextView = view.findViewById(R.id.vertical_card_title)
+        val menuContentLinearLayout: LinearLayout =
+            view.findViewById(R.id.menu_content_linear_layout)
 
-
-
-        init {
-            // Define click listener for the ViewHolder's View.
-            verticalTitleCard = view.findViewById(R.id.vertical_card_title)
-            menuContentLinearLayout = view.findViewById(R.id.menu_content_linear_layout)
-
-        }
     }
 
     // Create new views (invoked by the layout manager)

@@ -2,7 +2,6 @@ package com.example.oishii.cart
 
 import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
 import com.example.oishii.R
@@ -12,7 +11,7 @@ class CustomCartView(context: Context) : LinearLayout(context) {
 
     private val itemTitle: TextView
     private val priceTagCart: TextView?
-    val minusTv: TextView
+    private val removeDishButton: TextView
 
 
     init {
@@ -20,24 +19,19 @@ class CustomCartView(context: Context) : LinearLayout(context) {
 
         itemTitle = view.findViewById(R.id.dish_texView1)
         priceTagCart = view.findViewById(R.id.price_textView_cart)
-        minusTv = view.findViewById(R.id.minus_textView)
+        removeDishButton = view.findViewById(R.id.remove_button_textView)
     }
 
-    fun setCarthContentText(item: MenuObject) {
+    fun setCartContentText(item: MenuObject) {
+        val priceCurrency = "${item.priceTag}kr"
         itemTitle.text = item.header
-        priceTagCart?.text = item.priceTag
-
+        priceTagCart?.text = priceCurrency
     }
 
-
-
-
-
-
-
-
-
-
+    //TODO REMOVE
+    fun deleteCard(clickListener: OnClickListener) {
+        removeDishButton.setOnClickListener(clickListener)
+    }
 
 
 }

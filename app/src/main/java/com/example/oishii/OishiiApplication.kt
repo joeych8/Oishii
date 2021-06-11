@@ -12,7 +12,7 @@ class OishiiApplication : Application() {
 
     }
 
-    companion object{
+    companion object {
         lateinit var application: OishiiApplication
     }
 }

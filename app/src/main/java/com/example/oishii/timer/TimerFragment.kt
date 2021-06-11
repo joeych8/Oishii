@@ -7,11 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.activity.OnBackPressedDispatcher
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.navOptions
 import com.example.oishii.R
 import com.example.oishii.notification.OishiiNotificationManager
+import com.example.oishii.utils.NOTIFICATION_1_ID
 
 
 class TimerFragment : Fragment() {
@@ -19,7 +18,8 @@ class TimerFragment : Fragment() {
     private lateinit var timerTv: TextView
     private lateinit var backToStartTv: TextView
     private lateinit var secondsTv: TextView
-    var counter = 10
+    var counter = 5
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,13 +50,13 @@ class TimerFragment : Fragment() {
 
     private fun navigation() {
 
-        findNavController().navigate(R.id.action_timerFragment_to_takeAwayFragment2)
+        findNavController().navigate(R.id.action_timerFragment_to_takeAwayFragment)
     }
 
 
     private fun startTimeCounter() {
         val countTime = timerTv
-        object : CountDownTimer(10000, 1000) {
+        object : CountDownTimer(5000, 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 countTime.text = counter.toString()
                 counter--
@@ -64,9 +64,10 @@ class TimerFragment : Fragment() {
 
             override fun onFinish() {
 
-                OishiiNotificationManager.createAndSendNotification(
-                    "Order Complete!",
-                    "Your order is completed and ready for pickup"
+                OishiiNotificationManager.notificationChannel1(
+                    getString(R.string.notification_order_title_text),
+                    getString(R.string.notification_order_complete_text), NOTIFICATION_1_ID
+
                 )
                 timerTv.visibility = View.GONE
                 secondsTv.visibility = View.GONE

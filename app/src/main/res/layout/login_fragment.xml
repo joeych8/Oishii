@@ -20,6 +20,7 @@
             android:id="@+id/logo_imageView"
             android:layout_width="@dimen/main_logo_width"
             android:layout_height="@dimen/main_logo_height"
+            android:contentDescription="@string/main_app_logo"
             android:src="@drawable/ic_oishii_logo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

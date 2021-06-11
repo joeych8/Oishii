@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.navOptions
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.oishii.R
@@ -30,9 +29,9 @@ class MenuFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.menu_fragment, container, false)
         viewModel = ViewModelProvider(this).get(MenuViewModel::class.java)
-
         recyclerView = view.findViewById(R.id.menu_recyclerView)
         goToCheckOut = view.findViewById(R.id.goTOCheckOut)
+
         return view
     }
 
@@ -64,7 +63,7 @@ class MenuFragment : Fragment() {
                             "vegan ramen",
                             "Fresh ramen noodles, tofu,\nscallions, shitake mushrooms,\nleeks, bamboo shoots, pak choi\nin spicy dobanjiang soup.",
                             "allergens: hvete, soya, sesam, nøtter",
-                            "70kr",
+                            70,
                             "add to cart"
                         ),
                         MenuObject(
@@ -72,7 +71,7 @@ class MenuFragment : Fragment() {
                             "spicy vegan ramen",
                             "Fresh ramen noodles, tofu,\nscallions, shitake mushrooms,\nleeks, bamboo shoots, pak choi\nin spicy dobanjiang soup.",
                             "allergens: hvete, soya, sesam, nøtter",
-                            "70kr",
+                            70,
                             "add to cart"
                         )
                     )
@@ -81,9 +80,9 @@ class MenuFragment : Fragment() {
                         MenuObject(
                             0,
                             "vegan pad thai prik",
-                            "Rice noodle sticks with tofu,\nbean sprouts and chinese chieves\nin chilli sauce. Topped with\ncashew and lime.",
+                            "Rice noodle sticks with tofu,\nbean sprouts and chinese \nchieves in chilli sauce.\nTopped with cashew and lime.",
                             "allergens: nøtter, soya",
-                            "70kr",
+                            70,
                             "add to cart"
                         ),
                         MenuObject(
@@ -91,7 +90,7 @@ class MenuFragment : Fragment() {
                             "vegan teriyaki noodles",
                             "Wheat noodles woked with tofu,\npak choi, bell peppers, red\nonions and broccoli in teriyaki",
                             "allergens: hvete, soya",
-                            "70kr",
+                            70,
                             "add to cart"
                         )
                     )
@@ -102,21 +101,21 @@ class MenuFragment : Fragment() {
                             "sakura ramune",
                             null,
                             null,
-                            "30kr",
+                            30,
                             "add to cart"
                         ), MenuObject(
                             0,
                             "coffee",
                             null,
                             null,
-                            "20kr",
+                            20,
                             "add to cart"
                         ), MenuObject(
                             0,
                             "soda",
                             "Coca-cola\nCoca-cola zero\nsparkling water",
                             null,
-                            "35kr",
+                            35,
                             "add to cart"
                         )
                     )
@@ -127,7 +126,11 @@ class MenuFragment : Fragment() {
             //clicklistener from MenuAdapter / saving MenuObject to DB
             val itemToCart = it
             viewModel.addItem(itemToCart)
-            Toast.makeText(requireContext(), "Dish added to cart", Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                requireContext(),
+                getString(R.string.toast_dish_added_text),
+                Toast.LENGTH_SHORT
+            ).show()
         }
         recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerView.adapter = menuAdapter

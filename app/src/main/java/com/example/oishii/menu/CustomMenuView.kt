@@ -7,14 +7,13 @@ import android.widget.TextView
 import com.example.oishii.R
 import com.example.oishii.database.MenuObject
 
-class CustomMenuView(context: Context): LinearLayout(context) {
+class CustomMenuView(context: Context) : LinearLayout(context) {
 
-            private val dishTitle: TextView
-            private val contentDescription: TextView
-            private val allergensDescription: TextView
-            private val priceTag: TextView
-            val addToCart: TextView
-
+    private val dishTitle: TextView
+    private val contentDescription: TextView
+    private val allergensDescription: TextView
+    private val priceTag: TextView
+    val addToCart: TextView
 
 
     init {
@@ -31,18 +30,14 @@ class CustomMenuView(context: Context): LinearLayout(context) {
 
     //function to set text to linearLayout in cardView
     fun setMenuContentText(menu: MenuObject) {
+        val priceCurrency = menu.priceTag.toString() + context.getString(R.string.currency_text)
         dishTitle.text = menu.header
         contentDescription.text = menu.contentDescription
         allergensDescription.text = menu.allergensDescription
-        priceTag.text = menu.priceTag
+        priceTag.text = priceCurrency
         addToCart.text = menu.addToCart
 
     }
-
-
-
-
-
 
 
 }

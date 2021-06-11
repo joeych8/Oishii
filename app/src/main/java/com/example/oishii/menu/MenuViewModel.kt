@@ -7,16 +7,14 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 
-
-
 class MenuViewModel : ViewModel() {
 
     private val repository = MenuRepository()
 
 
-    fun addItem(item: MenuObject){
+    fun addItem(item: MenuObject) {
         CoroutineScope(Dispatchers.IO).launch {
-           repository.addItemToDB(item)
+            repository.addItemToDB(item)
         }
     }
 }

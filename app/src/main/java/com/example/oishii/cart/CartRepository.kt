@@ -7,18 +7,18 @@ import com.example.oishii.database.MenuObject
 class CartRepository {
 
     val database = AppDatabase.getDatabase(OishiiApplication.application.applicationContext)
-    private val CartItemDao = database.menuItemDao()
+    private val cartItemDao = database.menuItemDao()
 
-    fun fetchAllItemsFromDB(): List<MenuObject>{
-        return CartItemDao.getItems()
+    fun fetchAllItemsFromDB(): List<MenuObject> {
+        return cartItemDao.getItems()
     }
 
-    fun deleteItemFromDB(itemToDelete: MenuObject){
-        CartItemDao.deleteItem(itemToDelete)
+    fun deleteItemFromDB(itemToDelete: MenuObject) {
+        cartItemDao.deleteItem(itemToDelete)
     }
 
-    fun deleteAllItemsFromDB(){
-        CartItemDao.deleteAllItems()
+    fun deleteAllItemsFromDB() {
+        cartItemDao.deleteAllItems()
     }
 
 }

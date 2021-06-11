@@ -11,6 +11,7 @@ data class MenuObject(
     val header: String,
     val contentDescription: String?,
     val allergensDescription: String?,
-    val priceTag: String,
-    val addToCart: String?  //boolean ?
+    val priceTag: Int,
+    val addToCart: String?
+
 )

@@ -10,7 +10,7 @@
         android:id="@+id/loginFragment"
         android:name="com.example.oishii.login.LoginFragment"
         android:label="login_fragment"
-        tools:layout="@layout/login_fragment" >
+        tools:layout="@layout/login_fragment">
         <action
             android:id="@+id/action_loginFragment_to_takeAwayFragment"
             app:destination="@id/takeAwayFragment"
@@ -23,7 +23,7 @@
         android:id="@+id/menuFragment"
         android:name="com.example.oishii.menu.MenuFragment"
         android:label="menu_fragment"
-        tools:layout="@layout/menu_fragment" >
+        tools:layout="@layout/menu_fragment">
         <action
             android:id="@+id/action_menuFragment2_to_goToCartFragment"
             app:destination="@id/goToCartFragment"
@@ -36,7 +36,7 @@
         android:id="@+id/goToCartFragment"
         android:name="com.example.oishii.cart.CartFragment"
         android:label="go_to_cart_fragment"
-        tools:layout="@layout/cart_fragment" >
+        tools:layout="@layout/cart_fragment">
         <action
             android:id="@+id/action_goToCartFragment_to_timerFragment"
             app:destination="@id/timerFragment"
@@ -45,15 +45,15 @@
             app:popEnterAnim="@anim/fragment_fade_enter"
             app:popExitAnim="@anim/fragment_fade_exit"
             app:popUpTo="@id/menuFragment"
-            app:popUpToInclusive="true" />
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/timerFragment"
         android:name="com.example.oishii.timer.TimerFragment"
         android:label="timer_fragment"
-        tools:layout="@layout/timer_fragment" >
+        tools:layout="@layout/timer_fragment">
         <action
-            android:id="@+id/action_timerFragment_to_takeAwayFragment2"
+            android:id="@+id/action_timerFragment_to_takeAwayFragment"
             app:destination="@id/takeAwayFragment"
             app:enterAnim="@anim/fragment_fade_enter"
             app:exitAnim="@anim/fragment_fade_exit"
@@ -66,7 +66,7 @@
         android:id="@+id/takeAwayFragment"
         android:name="com.example.oishii.order.TakeAwayFragment"
         android:label="take_away_fragment"
-        tools:layout="@layout/take_away_fragment" >
+        tools:layout="@layout/take_away_fragment">
         <action
             android:id="@+id/action_takeAwayFragment_to_menuFragment"
             app:destination="@id/menuFragment"
@@ -74,5 +74,71 @@
             app:exitAnim="@anim/fragment_fade_exit"
             app:popEnterAnim="@anim/fragment_fade_enter"
             app:popExitAnim="@anim/fragment_fade_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.oishii.about.AboutFragment"
+        android:label="about_fragment"
+        tools:layout="@layout/about_fragment" >
+        <action
+            android:id="@+id/action_aboutFragment_to_burgerMenuFragment"
+            app:destination="@id/burgerMenuFragment"
+            app:popUpTo="@id/burgerMenuFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/burgerMenuFragment"
+        android:name="com.example.oishii.burgerMenu.BurgerMenuFragment"
+        android:label="burger_menu_fragment"
+        tools:layout="@layout/burger_menu_fragment">
+        <action
+            android:id="@+id/action_burgerMenuFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment"
+            app:enterAnim="@anim/fragment_fade_enter"
+            app:exitAnim="@anim/fragment_fade_exit"
+            app:popEnterAnim="@anim/fragment_fade_enter"
+            app:popExitAnim="@anim/fragment_fade_exit"
+            app:popUpTo="@id/burgerMenuFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_burgerMenuFragment_to_contactFragment"
+            app:destination="@id/contactFragment"
+            app:enterAnim="@anim/fragment_fade_enter"
+            app:exitAnim="@anim/fragment_fade_exit"
+            app:popEnterAnim="@anim/fragment_fade_enter"
+            app:popExitAnim="@anim/fragment_fade_exit"
+            app:popUpTo="@id/burgerMenuFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_burgerMenuFragment_to_calendarFragment"
+            app:destination="@id/calendarFragment"
+            app:enterAnim="@anim/fragment_fade_enter"
+            app:exitAnim="@anim/fragment_fade_exit"
+            app:popEnterAnim="@anim/fragment_fade_enter"
+            app:popExitAnim="@anim/fragment_fade_exit"
+            app:popUpTo="@id/burgerMenuFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/contactFragment"
+        android:name="com.example.oishii.contact.ContactFragment"
+        android:label="contact_fragment"
+        tools:layout="@layout/contact_fragment" >
+        <action
+            android:id="@+id/action_contactFragment_to_burgerMenuFragment2"
+            app:destination="@id/burgerMenuFragment"
+            app:popUpTo="@id/burgerMenuFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/calendarFragment"
+        android:name="com.example.oishii.calendar.CalendarFragment"
+        android:label="calendar_fragment"
+        tools:layout="@layout/calendar_fragment" >
+        <action
+            android:id="@+id/action_calendarFragment_to_burgerMenuFragment"
+            app:destination="@id/burgerMenuFragment"
+            app:popUpTo="@id/burgerMenuFragment"
+            app:popUpToInclusive="false" />
     </fragment>
 </navigation>

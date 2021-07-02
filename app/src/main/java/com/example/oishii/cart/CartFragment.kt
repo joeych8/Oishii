@@ -71,6 +71,11 @@ class CartFragment : Fragment() {
                 for (dish in menu) {
                     val newCartView = CustomCartView(requireContext())
                     newCartView.setCartContentText(dish)
+
+//                    newCartView.setOnClickListener {
+//                     TODO REMOVE
+//                    }
+
                     cartLinearLayout.addView(newCartView)
                 }
 

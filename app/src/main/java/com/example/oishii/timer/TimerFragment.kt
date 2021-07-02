@@ -39,8 +39,8 @@ class TimerFragment : Fragment() {
         startTimeCounter()
         setOnclickListeners()
 
-
     }
+
 
     private fun setOnclickListeners() {
         backToStartTv.setOnClickListener {
@@ -60,14 +60,13 @@ class TimerFragment : Fragment() {
             override fun onTick(millisUntilFinished: Long) {
                 countTime.text = counter.toString()
                 counter--
+
             }
 
             override fun onFinish() {
-
                 OishiiNotificationManager.notificationChannel1(
                     getString(R.string.notification_order_title_text),
                     getString(R.string.notification_order_complete_text), NOTIFICATION_1_ID
-
                 )
                 timerTv.visibility = View.GONE
                 secondsTv.visibility = View.GONE

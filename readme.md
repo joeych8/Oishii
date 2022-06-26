@@ -21,4 +21,3 @@ The design was created by design students.
 - Local notification
 - Google maps with location pin
 - Count-down timer
-

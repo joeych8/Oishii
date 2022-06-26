@@ -5,7 +5,7 @@ An android app that let's you buy and order food from the non-existent restauran
 ## Purpose
 
 This app was developed as part of an assignment during my studies. 
-The design was created by design students from the same school.
+The design was created by design students.
 
 ## Screenshots
 

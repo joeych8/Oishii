@@ -20,4 +20,4 @@ The design was created by design students.
 - Biometrics 
 - Local notification
 - Google maps with location pin
-- Count-down timer
+- Countdown timer
